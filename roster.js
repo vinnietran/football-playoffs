@@ -33,12 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
 function fetchRosterData(teamName) {
     const apiUrl = CONFIG.apiUrl;
     const action = 'getRosterAndScores';
+    const rosterTable = document.getElementById('roster-table-body');
+    const spinner = document.getElementById('spinner');
+    const button = document.getElementById('leaderboard-btn');
+    const score = document.getElementById('total-score');
+
+    spinner.style.display = 'block';
 
     fetch(`${apiUrl}?action=${encodeURIComponent(action)}&teamName=${encodeURIComponent(teamName)}`)
         .then(response => response.json())
         .then(data => {
             // Function to display the roster data
             populateRosterTable(data, teamName);
+            spinner.style.display = 'none';
+            rosterTable.style.display = 'table';
+            button.style.display = 'block';
+            score.style.display = 'block';
+
         })
         .catch(error => console.error('Error fetching roster data:', error));
 }

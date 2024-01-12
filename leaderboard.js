@@ -6,9 +6,18 @@ function fetchLeaderboardData() {
     const apiUrl = CONFIG.apiUrl;
     const action = 'getAllTeamsRosterAndScores';
 
+    const spinner = document.getElementById('spinner');
+    const leaderboardTable = document.getElementById('leaderboard-table');
+
+    // Show the spinner
+    spinner.style.display = 'block';
+
+
     fetch(`${apiUrl}?action=${encodeURIComponent(action)}`)
         .then(response => response.json())
         .then(data => {
+            spinner.style.display = 'none';
+            leaderboardTable.style.display = 'table';
             displayLeaderboard(data);
         })
         .catch(error => console.error('Error fetching leaderboard data:', error));
