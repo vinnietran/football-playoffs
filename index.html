@@ -10,13 +10,23 @@
     <div class="container">
         <h1>Welcome to the Fantasy Football Playoff Tournament</h1>
         <p>Participate and track your progress in the tournament.</p>
+        <p>Click the player names to see the full roster breakdown</p>
         <!-- <a href="leaderboard.html" class="btn">View Leaderboard</a> -->
     </div>
     <div class="container">
         <h1>Leaderboard</h1>
-        <ul id="leaderboard-list">
-            <!-- List of players will be added here -->
-        </ul>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-table-body">
+                <!-- Content will be inserted here by JavaScript -->
+            </tbody>
+        </table>
     </div>
     <script src="config.js"></script>
     <script src="leaderboard.js"></script>
