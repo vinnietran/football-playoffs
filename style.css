@@ -1,41 +1,154 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 10px;
 }
 
 .container {
-    width: 80%;
+    width: 100%;
+    max-width: 800px;
     margin: auto;
+    overflow: hidden;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
 table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
+    border-collapse: collapse;
 }
 
 table, th, td {
     border: 1px solid #ddd;
 }
 
-th, td {
-    padding: 8px;
+th {
+    background-color: #333;
+    color: #fff;
     text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #017bf5;
+}
+
+#leaderboard-table th {
+    text-align: center;
+}
+
+#roster-display {
+    margin-top: 30px;
+}
+
+#roster-table-body td {
+    text-align: center;
+}
+
+#total-score {
+    background-color: #017bf5;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #017bf5;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    #total-score {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+}
+
+/* Responsive Table with Horizontal Scrolling */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
 }
 
 th {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+@media screen and (max-width: 768px) {
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+

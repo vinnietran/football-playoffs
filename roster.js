@@ -1,20 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Replace with your actual web app URL and the team name you want to query
-    const apiUrl = CONFIG.apiUrl;
-    const teamName = 'Vinnie'; // You can dynamically set this based on user input or URL parameters
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Replace with your actual web app URL and the team name you want to query
+//     const apiUrl = CONFIG.apiUrl;
+//     const teamName = 'Vinnie'; // You can dynamically set this based on user input or URL parameters
 
-    fetchRosterData(apiUrl, teamName);
+//     fetchRosterData(apiUrl, teamName);
+// });
+
+// function fetchRosterData(apiUrl, teamName) {
+//     console.log("fetching ...")
+//     const url = `${apiUrl}?action=getRosterAndScores&teamName=${encodeURIComponent(teamName)}`;
+
+//     fetch(url)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('Data received:', data); // Log the data to see its structure
+//             populateRosterTable(data, teamName); // Directly pass the data to populateRosterTable
+//         })
+//         .catch(error => console.error('Error fetching roster data:', error));
+// }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const teamName = urlParams.get('teamName');
+
+    if (teamName) {
+        fetchRosterData(teamName);
+    } else {
+        // Handle cases where no team name is provided
+    }
 });
 
-function fetchRosterData(apiUrl, teamName) {
-    console.log("fetching ...")
-    const url = `${apiUrl}?action=getRosterAndScores&teamName=${encodeURIComponent(teamName)}`;
+function fetchRosterData(teamName) {
+    const apiUrl = CONFIG.apiUrl;
+    const action = 'getRosterAndScores';
 
-    fetch(url)
+    fetch(`${apiUrl}?action=${encodeURIComponent(action)}&teamName=${encodeURIComponent(teamName)}`)
         .then(response => response.json())
         .then(data => {
-            console.log('Data received:', data); // Log the data to see its structure
-            populateRosterTable(data, teamName); // Directly pass the data to populateRosterTable
+            // Function to display the roster data
+            populateRosterTable(data, teamName);
         })
         .catch(error => console.error('Error fetching roster data:', error));
 }
