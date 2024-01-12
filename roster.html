@@ -8,21 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="player-name">Player's Roster</h1>
-        <table id="roster-table">
+        <h1 id="player-name"></h1>
+        <table id="roster-table-body">
             <thead>
                 <tr>
                     <th>Position</th>
                     <th>Player Name</th>
-                    <th>Team</th>
+                    <th>Wild Card</th>
+                    <th>Divisional</th>
+                    <th>Conference</th>
+                    <th>Super Bowl</th>
                     <th>Points</th>
+                    <th>Team</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Roster data will be inserted here -->
             </tbody>
         </table>
+        
+
     </div>
+    <div id="total-score"></div>
+    <div>
+        <a href="leaderboard.html" class="btn">View Leaderboard</a>
+
+    </div>
+    <script src="config.js"></script>
     <script src="roster.js"></script>
 </body>
 </html>
