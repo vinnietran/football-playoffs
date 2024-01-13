@@ -75,6 +75,10 @@ function populateRosterTable(roster, teamName) {
         row.insertCell(6).textContent = player.score;    // Player Score
         row.insertCell(7).textContent = player.team;     // Player Team
 
+        if (player.isEliminated === 'Y') {
+            row.classList.add('strikethrough-row');
+        }
+
         totalScore += parseInt(player.score, 10) || 0;   // Add player's score to total
     });
 
