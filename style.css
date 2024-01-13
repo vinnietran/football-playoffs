@@ -188,3 +188,7 @@ tr:nth-child(even) {
     100% { transform: rotate(360deg); }
 }
 
+.strikethrough-row td {
+    text-decoration: line-through;
+}
+
