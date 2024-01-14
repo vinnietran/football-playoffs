@@ -79,7 +79,8 @@ function populateRosterTable(roster, teamName) {
             row.classList.add('strikethrough-row');
         }
 
-        totalScore += parseInt(player.score, 10) || 0;   // Add player's score to total
+        totalScore += parseFloat(player.score) || 0; 
+        totalScore = parseFloat(totalScore.toFixed(2));  // Add player's score to total
     });
 
     totalScoreElement.textContent = `Total Score: ${totalScore}`;
