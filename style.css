@@ -192,3 +192,22 @@ tr:nth-child(even) {
     text-decoration: line-through;
 }
 
+.header-gif {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    vertical-align: middle; /* Align with the text */
+    margin: 0 10px;
+}
+
+#cash {
+    display: inline; /* Keep the header inline with the GIFs */
+    margin: 0; /* Adjust as needed */
+}
+
+@media screen and (max-width: 768px) {
+    .header-gif {
+        width: 60px; /* Smaller size for mobile */
+        margin: 0;
+    }
+
+}
