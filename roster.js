@@ -72,7 +72,7 @@ function populateRosterTable(roster, teamName) {
         row.insertCell(3).textContent = player.div; 
         row.insertCell(4).textContent = player.champ;   
         row.insertCell(5).textContent = player.sb;
-        row.insertCell(6).textContent = player.score;    // Player Score
+        row.insertCell(6).textContent = parseFloat(player.score.toFixed(2));    // Player Score
         row.insertCell(7).textContent = player.team;     // Player Team
 
         if (player.isEliminated === 'Y') {
